@@ -1,0 +1,27 @@
+########## 读取 ##########
+# https://solana.com/zh/docs/intro/quick-start/reading-from-network
+# [1. Fetch Account]
+yxzhang@SolanaLearn:ts-client$ touch quick-start/fetch_account.ts # 拷贝代码
+yxzhang@SolanaLearn:ts-client$ yarn add @solana/kit
+yxzhang@SolanaLearn:ts-client$ yarn add @solana/kit-plugin-rpc
+yxzhang@SolanaLearn:ts-client$ yarn add @solana/kit-plugin-signer
+yxzhang@SolanaLearn:ts-client$ sudo apt install ts-node
+yxzhang@SolanaLearn:ts-client$ ts-node quick-start/fetch_account.ts 
+# [2. Fetch Program Account]
+yxzhang@SolanaLearn:ts-client$ touch quick-start/fetch_program_account.ts # 拷贝代码
+yxzhang@SolanaLearn:ts-client$ ts-node quick-start/fetch_program_account.ts 
+# [3. Fetch Mint Account]
+yxzhang@SolanaLearn:ts-client$ touch quick-start/fetch_mint_account.ts # 拷贝代码
+yxzhang@SolanaLearn:ts-client$ ts-node quick-start/fetch_mint_account.ts 
+# [4. Deserialize Mint Account Data]
+yxzhang@SolanaLearn:ts-client$ touch quick-start/deserialize_mint_account_data.ts # 拷贝代码
+yxzhang@SolanaLearn:ts-client$ yarn add @solana-program/token
+yxzhang@SolanaLearn:ts-client$ ts-node quick-start/deserialize_mint_account_data.ts 
+########## 写入 ##########
+# https://solana.com/zh/docs/intro/quick-start/writing-to-network
+yxzhang@SolanaLearn:ts-client$ touch quick-start/transfer_sol.ts # 拷贝代码
+yxzhang@SolanaLearn:ts-client$ ts-node quick-start/transfer_sol.ts 
+yxzhang@SolanaLearn:ts-client$ touch quick-start/create_mint_account.ts # 拷贝代码
+yxzhang@SolanaLearn:ts-client$ yarn add @solana-program/token-2022
+yxzhang@SolanaLearn:ts-client$ ts-node quick-start/create_mint_account.ts 
+yxzhang@SolanaLearn:ts-client$ touch quick-start/note

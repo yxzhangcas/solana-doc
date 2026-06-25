@@ -3,30 +3,3 @@ yxzhang@SolanaLearn:solana-doc$ cd ts-client/
 yxzhang@SolanaLearn:ts-client$ npm init
 # 在另一个shell启动本地rpc
 yxzhang@SolanaLearn:~$ solana-test-validator
-########## 读取 ##########
-# https://solana.com/zh/docs/intro/quick-start/reading-from-network
-# [1. Fetch Account]
-yxzhang@SolanaLearn:ts-client$ touch fetch_account.ts # 拷贝代码
-yxzhang@SolanaLearn:ts-client$ yarn add @solana/kit
-yxzhang@SolanaLearn:ts-client$ yarn add @solana/kit-plugin-rpc
-yxzhang@SolanaLearn:ts-client$ yarn add @solana/kit-plugin-signer
-yxzhang@SolanaLearn:ts-client$ sudo apt install ts-node
-yxzhang@SolanaLearn:ts-client$ ts-node fetch_account.ts 
-# [2. Fetch Program Account]
-yxzhang@SolanaLearn:ts-client$ touch fetch_program_account.ts # 拷贝代码
-yxzhang@SolanaLearn:ts-client$ ts-node fetch_program_account.ts 
-# [3. Fetch Mint Account]
-yxzhang@SolanaLearn:ts-client$ touch fetch_mint_account.ts # 拷贝代码
-yxzhang@SolanaLearn:ts-client$ ts-node fetch_mint_account.ts 
-# [4. Deserialize Mint Account Data]
-yxzhang@SolanaLearn:ts-client$ touch deserialize_mint_account_data.ts # 拷贝代码
-yxzhang@SolanaLearn:ts-client$ yarn add @solana-program/token
-yxzhang@SolanaLearn:ts-client$ ts-node deserialize_mint_account_data.ts 
-########## 写入 ##########
-# https://solana.com/zh/docs/intro/quick-start/writing-to-network
-yxzhang@SolanaLearn:ts-client$ touch transfer_sol.ts # 拷贝代码
-yxzhang@SolanaLearn:ts-client$ ts-node transfer_sol.ts 
-yxzhang@SolanaLearn:ts-client$ touch create_mint_account.ts # 拷贝代码
-yxzhang@SolanaLearn:ts-client$ yarn add @solana-program/token-2022
-yxzhang@SolanaLearn:ts-client$ ts-node create_mint_account.ts 
-yxzhang@SolanaLearn:ts-client$ touch note
