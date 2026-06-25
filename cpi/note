@@ -1,0 +1,17 @@
+# https://solana.com/zh/docs/intro/quick-start/cross-program-invocation
+yxzhang@SolanaLearn:solana-doc$ anchor init cpi --no-git --no-install
+yxzhang@SolanaLearn:solana-doc$ cd cpi/
+yxzhang@SolanaLearn:cpi$ rm -rf app/ migrations/ .gitignore .prettierignore
+yxzhang@SolanaLearn:cpi$ cd programs/cpi/
+yxzhang@SolanaLearn:cpi$ rm -rf tests/ src/instructions* src/constants.rs src/error.rs src/state.rs
+yxzhang@SolanaLearn:cpi$ cd ../..
+# 拷贝代码（需要在03-pda项目的基础上进行修改
+yxzhang@SolanaLearn:cpi$ anchor build
+yxzhang@SolanaLearn:cpi$ mkdir tests
+yxzhang@SolanaLearn:cpi$ touch tests/cpi_test.ts # 完善测试代码
+yxzhang@SolanaLearn:cpi$ yarn
+yxzhang@SolanaLearn:cpi$ yarn add --dev @solana/web3.js
+yxzhang@SolanaLearn:cpi$ cargo build-sbf --arch v3 --manifest-path programs/cpi/Cargo.toml
+# 修改Anchor.toml文件
+yxzhang@SolanaLearn:cpi$ anchor test
+yxzhang@SolanaLearn:cpi$ touch note
