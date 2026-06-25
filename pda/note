@@ -1,0 +1,20 @@
+# https://solana.com/zh/docs/intro/quick-start/program-derived-address
+# 使用本地的test-validator进行部署验证
+yxzhang@SolanaLearn:solana-doc$ anchor init pda --no-git --no-install
+yxzhang@SolanaLearn:solana-doc$ cd pda/
+yxzhang@SolanaLearn:pda$ rm -rf app/ migrations/ .gitignore .prettierignore
+yxzhang@SolanaLearn:pda$ cd programs/pda/
+yxzhang@SolanaLearn:pda$ rm -rf tests/ src/instructions* src/constants.rs src/error.rs src/state.rs
+yxzhang@SolanaLearn:pda$ cd ../..
+# 拷贝代码到lib.rs
+yxzhang@SolanaLearn:pda$ anchor build
+yxzhang@SolanaLearn:pda$ llvm-readelf -h target/deploy/pda.so | grep -i flags # 0x0
+yxzhang@SolanaLearn:pda$ cargo build-sbf --arch v3 --manifest-path programs/pda/Cargo.toml
+yxzhang@SolanaLearn:pda$ llvm-readelf -h target/deploy/pda.so | grep -i flags # 0x3
+yxzhang@SolanaLearn:pda$ solana program deploy --program-id target/deploy/pda-keypair.json target/deploy/pda.so
+yxzhang@SolanaLearn:pda$ mkdir tests
+yxzhang@SolanaLearn:pda$ touch tests/pda_test.ts # 拷贝代码
+yxzhang@SolanaLearn:pda$ yarn
+yxzhang@SolanaLearn:pda$ yarn add --dev @solana/web3.js
+yxzhang@SolanaLearn:pda$ anchor test
+yxzhang@SolanaLearn:pda$ touch note
