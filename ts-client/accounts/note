@@ -1,0 +1,15 @@
+# https://solana.com/zh/docs/core/accounts
+yxzhang@SolanaLearn:ts-client$ mkdir accounts
+yxzhang@SolanaLearn:ts-client$ touch accounts/keypair.ts
+yxzhang@SolanaLearn:ts-client$ ts-node accounts/keypair.ts 
+yxzhang@SolanaLearn:ts-client$ touch accounts/pda.ts
+yxzhang@SolanaLearn:ts-client$ ts-node accounts/pda.ts 
+yxzhang@SolanaLearn:ts-client$ touch accounts/token_program.ts
+yxzhang@SolanaLearn:ts-client$ ts-node accounts/token_program.ts 
+yxzhang@SolanaLearn:ts-client$ touch accounts/token_2022_account.ts
+yxzhang@SolanaLearn:ts-client$ ts-node accounts/token_2022_account.ts 
+yxzhang@SolanaLearn:ts-client$ touch accounts/sol_account.ts
+yxzhang@SolanaLearn:ts-client$ ts-node accounts/sol_account.ts 
+yxzhang@SolanaLearn:ts-client$ touch accounts/sysvar_clock.ts
+yxzhang@SolanaLearn:ts-client$ ts-node accounts/sysvar_clock.ts 
+yxzhang@SolanaLearn:ts-client$ touch accounts/note
