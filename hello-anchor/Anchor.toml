@@ -9,10 +9,10 @@ skip-lint = false
 hello_anchor = "F3hJJ223dGPXzqq4VLiPMNNmXYTomL6T9GdE2hvur8ha"
 
 [provider]
-cluster = "localnet"
+cluster = "http://127.0.0.1:8899"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
-test = "cargo test"
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
 
 [hooks]

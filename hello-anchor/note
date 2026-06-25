@@ -1,0 +1,60 @@
+# https://solana.com/zh/docs/intro/quick-start/deploying-programs
+# 使用本地的test-validator进行部署验证
+yxzhang@SolanaLearn:solana-doc$ anchor init hello-anchor --no-git --no-install
+yxzhang@SolanaLearn:solana-doc$ cd hello-anchor/
+yxzhang@SolanaLearn:hello-anchor$ rm -rf app/ migrations/ .gitignore .prettierignore
+yxzhang@SolanaLearn:hello-anchor$ cd programs/hello-anchor/
+yxzhang@SolanaLearn:hello-anchor$ rm -rf tests/ src/instructions* src/constants.rs src/error.rs src/state.rs 
+yxzhang@SolanaLearn:hello-anchor$ cd -
+# 拷贝代码到lib.rs
+yxzhang@SolanaLearn:hello-anchor$ anchor build # 生成测试需要的文件
+yxzhang@SolanaLearn:hello-anchor$ llvm-readelf -h target/deploy/hello_anchor.so | grep -i flags # 0x0
+yxzhang@SolanaLearn:hello-anchor$ cargo build-sbf --arch v3 --manifest-path programs/hello-anchor/Cargo.toml # 针对v3问题的临时方案
+yxzhang@SolanaLearn:hello-anchor$ llvm-readelf -h target/deploy/hello_anchor.so | grep -i flags # 0x3
+yxzhang@SolanaLearn:hello-anchor$ solana config set --url localhost
+yxzhang@SolanaLearn:hello-anchor$ solana program deploy --program-id target/deploy/hello_anchor-keypair.json target/deploy/hello_anchor.so 
+yxzhang@SolanaLearn:hello-anchor$ mkdir tests
+yxzhang@SolanaLearn:hello-anchor$ touch tests/hello_anchor_test.ts # 拷贝代码，进行必要修改
+yxzhang@SolanaLearn:hello-anchor$ yarn
+yxzhang@SolanaLearn:hello-anchor$ anchor test
+yxzhang@SolanaLearn:hello-anchor$ solana confirm -v 2s7dBfDFBQnTozww2jdiS9i5zUMywnnfqmtSem3jYErCKAt59BHCETfSyrATG9RDgParc55QBPBm8m52FxWoBgn8
+RPC URL: http://localhost:8899
+Default Signer Path: /home/yxzhang/.config/solana/id.json
+Commitment: confirmed
+Transaction executed in slot 1665:
+  Block Time: 2026-06-25T14:42:01+08:00
+  Version: legacy
+  Recent Blockhash: 4QPAvDqw8c38SkkCT9KuxagV8MudjUgWQ2FD9Wx1Ajj6
+  Signature 0: 2s7dBfDFBQnTozww2jdiS9i5zUMywnnfqmtSem3jYErCKAt59BHCETfSyrATG9RDgParc55QBPBm8m52FxWoBgn8
+  Signature 1: 5fXuK3cbsrcEjh1QGwu2zTso1uQsatCyRtdiZmo42EiHu3eASHtafqqyTTTdXeWFPsMHp19vGmW11JWSvnhpXwYB
+  Account 0: srw- GNiXA2YysPgfWphbVWxLWZs8PT5aPzhHERE8irz4Yemz (fee payer)
+  Account 1: srw- B1QEFNKdCRHE8wLG9ycy4zEXetGNsctGjTauvV3qjTHK
+  Account 2: -r-- 11111111111111111111111111111111
+  Account 3: -r-x F3hJJ223dGPXzqq4VLiPMNNmXYTomL6T9GdE2hvur8ha
+  Instruction 0
+    Program:   F3hJJ223dGPXzqq4VLiPMNNmXYTomL6T9GdE2hvur8ha (3)
+    Account 0: B1QEFNKdCRHE8wLG9ycy4zEXetGNsctGjTauvV3qjTHK (1)
+    Account 1: GNiXA2YysPgfWphbVWxLWZs8PT5aPzhHERE8irz4Yemz (0)
+    Account 2: 11111111111111111111111111111111 (2)
+    Data: [175, 175, 109, 31, 13, 152, 155, 237, 42, 0, 0, 0, 0, 0, 0, 0]
+  Status: Ok
+    Fee: ◎0.00001
+    Account 0 balance: ◎499999997.484084368 -> ◎499999997.483072102
+    Account 1 balance: ◎0 -> ◎0.00100224
+    Account 2 balance: ◎0.000000001
+    Account 3 balance: ◎0.00114144
+  Compute Units Consumed: 5088
+  Log Messages:
+    Program F3hJJ223dGPXzqq4VLiPMNNmXYTomL6T9GdE2hvur8ha invoke [1]
+    Program log: Instruction: Initialize
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program log: Changed data to: 42!
+    Program F3hJJ223dGPXzqq4VLiPMNNmXYTomL6T9GdE2hvur8ha consumed 5088 of 200000 compute units
+    Program F3hJJ223dGPXzqq4VLiPMNNmXYTomL6T9GdE2hvur8ha success
+yxzhang@SolanaLearn:hello-anchor$ solana balance
+499999997.483072102 SOL
+yxzhang@SolanaLearn:hello-anchor$ solana program close F3hJJ223dGPXzqq4VLiPMNNmXYTomL6T9GdE2hvur8ha --bypass-warning
+yxzhang@SolanaLearn:hello-anchor$ solana balance
+499999998.249648511 SOL
+yxzhang@SolanaLearn:hello-anchor$ touch note
