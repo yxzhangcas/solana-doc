@@ -1,0 +1,11 @@
+# https://solana.com/zh/docs/core/pda
+yxzhang@SolanaLearn:ts-client$ mkdir pda
+yxzhang@SolanaLearn:ts-client$ touch pda/string_seed.ts
+yxzhang@SolanaLearn:ts-client$ ts-node pda/string_seed.ts 
+yxzhang@SolanaLearn:ts-client$ touch pda/address_seed.ts
+yxzhang@SolanaLearn:ts-client$ ts-node pda/address_seed.ts 
+yxzhang@SolanaLearn:ts-client$ touch pda/string_and_address_seed.ts
+yxzhang@SolanaLearn:ts-client$ ts-node pda/string_and_address_seed.ts 
+yxzhang@SolanaLearn:ts-client$ touch pda/loop_bump_seed.ts
+yxzhang@SolanaLearn:ts-client$ ts-node pda/loop_bump_seed.ts 
+yxzhang@SolanaLearn:ts-client$ touch pda/note
