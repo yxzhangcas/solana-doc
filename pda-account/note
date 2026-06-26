@@ -1,0 +1,19 @@
+# https://solana.com/zh/docs/core/pda/pda-accounts
+# 使用本地的test-validator进行部署验证
+yxzhang@SolanaLearn:solana-doc$ anchor init pda-account --no-git --no-install
+yxzhang@SolanaLearn:solana-doc$ cd pda-account/
+yxzhang@SolanaLearn:pda-account$ rm -rf app/ migrations/ .gitignore .prettierignore
+yxzhang@SolanaLearn:pda-account$ cd programs/pda-account/
+yxzhang@SolanaLearn:pda-account$ rm -rf tests/ src/instructions* src/constants.rs src/error.rs src/state.rs
+yxzhang@SolanaLearn:pda-account$ cd ../..
+# 拷贝代码到lib.rs
+yxzhang@SolanaLearn:pda-account$ anchor build
+yxzhang@SolanaLearn:pda-account$ cargo build-sbf --arch v3 --manifest-path programs/pda-account/Cargo.toml
+yxzhang@SolanaLearn:pda-account$ solana program deploy --program-id target/deploy/pda_account-keypair.json target/deploy/pda_account.so 
+yxzhang@SolanaLearn:pda-account$ mkdir tests
+yxzhang@SolanaLearn:pda-account$ touch tests/pda_account_test.ts
+# 拷贝代码
+yxzhang@SolanaLearn:pda-account$ yarn
+yxzhang@SolanaLearn:pda-account$ yarn add --dev @coral-xyz/anchor
+yxzhang@SolanaLearn:pda-account$ anchor test
+yxzhang@SolanaLearn:pda-account$ touch note
