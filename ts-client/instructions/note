@@ -1,0 +1,5 @@
+# https://solana.com/zh/docs/core/instructions/instruction-structure
+yxzhang@SolanaLearn:ts-client$ mkdir instructions
+yxzhang@SolanaLearn:ts-client$ touch instructions/transfer_sol.ts
+yxzhang@SolanaLearn:ts-client$ ts-node instructions/transfer_sol.ts 
+yxzhang@SolanaLearn:ts-client$ touch instructions/note

@@ -1,0 +1,6 @@
+https://solana.com/zh/docs/core/fees
+yxzhang@SolanaLearn:ts-client$ mkdir fees
+yxzhang@SolanaLearn:ts-client$ touch fees/set_fee.ts
+yxzhang@SolanaLearn:ts-client$ yarn add @solana/web3.js
+yxzhang@SolanaLearn:ts-client$ ts-node fees/set_fee.ts 
+yxzhang@SolanaLearn:ts-client$ touch fees/note

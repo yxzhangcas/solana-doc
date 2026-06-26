@@ -1,0 +1,9 @@
+# https://solana.com/zh/docs/core/transactions
+yxzhang@SolanaLearn:ts-client$ mkdir transactions
+yxzhang@SolanaLearn:ts-client$ touch transactions/transfer_sol.ts
+yxzhang@SolanaLearn:ts-client$ ts-node transactions/transfer_sol.ts 
+yxzhang@SolanaLearn:ts-client$ touch transactions/transfer_message.ts
+yxzhang@SolanaLearn:ts-client$ ts-node transactions/transfer_message.ts 
+yxzhang@SolanaLearn:ts-client$ touch transactions/check_account.ts
+yxzhang@SolanaLearn:ts-client$ ts-node transactions/check_account.ts 
+yxzhang@SolanaLearn:ts-client$ touch transactions/note
