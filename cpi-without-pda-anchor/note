@@ -1,0 +1,18 @@
+# https://solana.com/zh/docs/core/cpi/cpi-without-pda
+yxzhang@SolanaLearn:solana-doc$ anchor init cpi-without-pda-anchor --no-git --no-install
+yxzhang@SolanaLearn:solana-doc$ cd cpi-without-pda-anchor/
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ rm -rf app/ migrations/ .gitignore .prettierignore
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ cd programs/cpi-without-pda-anchor/
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ rm -rf tests/ src/instructions* src/constants.rs src/error.rs src/state.rs
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ cd ../..
+# 拷贝代码到lib.rs
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ anchor build
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ cargo build-sbf --arch v3 --manifest-path programs/cpi-without-pda-anchor/Cargo.toml
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ mkdir tests
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ touch tests/test_anchor.ts
+# 拷贝代码到test文件
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ yarn
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ yarn add --dev @coral-xyz/anchor
+# 修改Anchor.toml
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ anchor test
+yxzhang@SolanaLearn:cpi-without-pda-anchor$ touch note
