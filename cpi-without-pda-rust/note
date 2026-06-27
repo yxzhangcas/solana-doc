@@ -1,0 +1,26 @@
+# https://solana.com/zh/docs/core/cpi/cpi-without-pda
+yxzhang@SolanaLearn:solana-doc$ cargo new cpi-without-pda-rust --lib
+yxzhang@SolanaLearn:solana-doc$ cd cpi-without-pda-rust/
+# [PROGRAM] 拷贝代码到lib.rs
+yxzhang@SolanaLearn:cpi-without-pda-rust$ cargo add solana_program borsh solana-system-interface
+# solana-system-interface = { version = "3.2.0", features = ["bincode"] }
+# [lib]
+# crate-type = ["cdylib", "lib"]
+# use solana_system_interface::instruction as system_instruction;
+yxzhang@SolanaLearn:cpi-without-pda-rust$ cargo build-sbf --arch v3
+yxzhang@SolanaLearn:cpi-without-pda-rust$ llvm-readelf -h target/deploy/cpi_without_pda_rust.so | grep -i flags  # 0x3
+# [SVM]
+yxzhang@SolanaLearn:cpi-without-pda-rust$ npm init
+yxzhang@SolanaLearn:cpi-without-pda-rust$ yarn add -D @solana/kit @solana-program/system @solana/kit-plugin-litesvm @solana/kit-plugin-signer @types/node
+yxzhang@SolanaLearn:cpi-without-pda-rust$ tsc --init # tsconfig.json: target => es2020; types: ["node"]
+yxzhang@SolanaLearn:cpi-without-pda-rust$ mkdir svm
+yxzhang@SolanaLearn:cpi-without-pda-rust$ touch svm/transaction.ts # 编写代码
+yxzhang@SolanaLearn:cpi-without-pda-rust$ ts-node svm/transaction.ts 
+# [TEST]
+yxzhang@SolanaLearn:cpi-without-pda-rust$ mkdir tests
+yxzhang@SolanaLearn:cpi-without-pda-rust$ touch tests/svm.test.ts # 编写代码(文件名需要有独立的test，用.分隔)
+yxzhang@SolanaLearn:cpi-without-pda-rust$ yarn add -D jest @types/jest
+# package.json: "type":"module", "test":"node --experimental-vm-modules node_modules/jest/bin/jest.js"
+# tsconfig.json: "types":["node", "jest"]
+yxzhang@SolanaLearn:cpi-without-pda-rust$ yarn test
+yxzhang@SolanaLearn:cpi-without-pda-rust$ touch note
