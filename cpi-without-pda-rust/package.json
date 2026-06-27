@@ -1,0 +1,19 @@
+{
+  "name": "cpi-without-pda-rust",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@solana-program/system": "^0.12.2",
+    "@solana/kit": "^6.10.0",
+    "@solana/kit-plugin-litesvm": "^0.12.1",
+    "@solana/kit-plugin-signer": "^0.12.1",
+    "@types/node": "^26.0.1"
+  }
+}
