@@ -1,0 +1,19 @@
+# https://solana.com/zh/docs/core/cpi/cpi-with-pda
+yxzhang@SolanaLearn:solana-doc$ anchor init cpi-with-pda-anchor --no-git --no-install
+yxzhang@SolanaLearn:solana-doc$ cd cpi-with-pda-anchor/
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ rm -rf app/ migrations/ .gitignore .prettierignore
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ cd programs/cpi-with-pda-anchor/
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ rm -rf tests/ src/instructions* src/constants.rs src/error.rs src/state.rs
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ cd ../..
+# 拷贝代码到lib.rs: program_id => program_id.key()
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ anchor build
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ cargo build-sbf --arch v3 --manifest-path programs/cpi-with-pda-anchor/Cargo.toml
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ mkdir tests
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ touch tests/test_anchor.ts
+# 拷贝代码到test_anchor.ts
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ yarn
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ yarn add -D @coral-xyz/anchor
+# 修改Anchor.toml: test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"; cluster = "http://127.0.0.1:8899"
+# 启动本地RPC
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ anchor test
+yxzhang@SolanaLearn:cpi-with-pda-anchor$ touch note
