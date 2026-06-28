@@ -1,0 +1,21 @@
+# https://solana.com/zh/docs/core/cpi/cpi-with-pda
+yxzhang@SolanaLearn:solana-doc$ cargo new cpi-with-pda-rust --lib
+yxzhang@SolanaLearn:solana-doc$ cd cpi-with-pda-rust/
+# [PROGRAM] 拷贝代码到lib.rs
+yxzhang@SolanaLearn:cpi-with-pda-rust$ cargo add solana_program borsh solana-system-interface 
+# use solana_system_interface::instruction as system_instruction;
+# solana-system-interface = { version = "3.2.0", features = ["bincode"] }
+# Cargo.toml 添加：[lib]
+# crate-type = ["cdylib", "lib"]
+yxzhang@SolanaLearn:cpi-with-pda-rust$ cargo build-sbf # 不使用v3，litesvm不支持v3
+# [TEST]
+yxzhang@SolanaLearn:cpi-with-pda-rust$ npm init
+yxzhang@SolanaLearn:cpi-with-pda-rust$ tsc --init
+yxzhang@SolanaLearn:cpi-with-pda-rust$ mkdir tests
+yxzhang@SolanaLearn:cpi-with-pda-rust$ touch tests/svm.test.ts # 拷贝测试代码
+yxzhang@SolanaLearn:cpi-with-pda-rust$ yarn add -D @solana/kit @solana-program/system @solana/kit-plugin-litesvm @solana/kit-plugin-signer @types/node jest @types/jest
+# package.json: "type":"module", "test":"node --experimental-vm-modules node_modules/jest/bin/jest.js"
+# tsconfig.json: target => es2020; types: ["node", "jest"]
+# 修改测试代码，使用最新的kit和litesvm， 留意pda的生成方式
+yxzhang@SolanaLearn:cpi-with-pda-rust$ yarn test
+yxzhang@SolanaLearn:cpi-with-pda-rust$ touch note

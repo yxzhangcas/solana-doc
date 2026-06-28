@@ -1,0 +1,21 @@
+{
+  "name": "cpi-with-pda-rust",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "devDependencies": {
+    "@solana-program/system": "^0.12.2",
+    "@solana/kit": "^6.10.0",
+    "@solana/kit-plugin-litesvm": "^0.12.1",
+    "@solana/kit-plugin-signer": "^0.12.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.0.1",
+    "jest": "^30.4.2"
+  }
+}
