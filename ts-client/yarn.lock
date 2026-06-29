@@ -19,6 +19,11 @@
   resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.8.0.tgz#cee43d801fcef9644b11b8194857695acd5f815a"
   integrity sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==
 
+"@solana-program/memo@^0.11.2":
+  version "0.11.2"
+  resolved "https://registry.yarnpkg.com/@solana-program/memo/-/memo-0.11.2.tgz#a60c4f585042e0ae00c85e37db34aee6d6eeaf7f"
+  integrity sha512-W32j3JAibRDG7s17NJpMwhDWkHlfltW8guWmWylB9wsszboOHkT372iI+th7BmhzOmuCqRZQWCNS5yUVZvUTOQ==
+
 "@solana-program/system@^0.12.0", "@solana-program/system@^0.12.2":
   version "0.12.2"
   resolved "https://registry.yarnpkg.com/@solana-program/system/-/system-0.12.2.tgz#bd5d77350e4576a193324045283a7091155ef830"
@@ -556,6 +561,13 @@
     "@solana/offchain-messages" "6.10.0"
     "@solana/transaction-messages" "6.10.0"
     "@solana/transactions" "6.10.0"
+
+"@solana/spl-memo@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@solana/spl-memo/-/spl-memo-0.2.5.tgz#a7828cdd1e810ff77c7c015ac97dfa166d0651fe"
+  integrity sha512-0Zx5t3gAdcHlRTt2O3RgGlni1x7vV7Xq7j4z9q8kKOMgU03PyoTbFQ/BSYCcICHzkaqD7ZxAiaJ6dlXolg01oA==
+  dependencies:
+    buffer "^6.0.3"
 
 "@solana/spl-token-group@^0.0.7":
   version "0.0.7"

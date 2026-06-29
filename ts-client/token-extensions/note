@@ -1,0 +1,59 @@
+# https://solana.com/zh/docs/tokens/extensions
+# 将项目配置成module，可以直接在方法外使用await。
+yxzhang@SolanaLearn:ts-client$ mkdir token-extensions
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/scaled_ui_amount_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/scaled_ui_amount_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/scaled_ui_amount_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/scaled_ui_amount_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/metadata_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/metadata_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/metadata_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/metadata_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/non_transferrable_token_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/non_transferrable_token_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/non_transferrable_token_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/non_transferrable_token_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/transfer_fee_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/transfer_fee_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/transfer_fee_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/transfer_fee_web3.ts
+yxzhang@SolanaLearn:ts-client$ yarn add @solana-program/memo
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/memo_transfer_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/memo_transfer_kit.ts
+yxzhang@SolanaLearn:ts-client$ yarn add @solana/spl-memo
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/memo_transfer_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/memo_transfer_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/immutable_owner_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/immutable_owner_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/immutable_owner_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/immutable_owner_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/interest_bearing_token_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/interest_bearing_token_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/interest_bearing_token_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/interest_bearing_token_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/default_state_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/default_state_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/default_state_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/default_state_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/permanent_delegate_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/permanent_delegate_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/permanent_delegate_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/permanent_delegate_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/close_mint_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/close_mint_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/close_mint_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/close_mint_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/group_member_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/group_member_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/group_member_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/group_member_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/cpi_guard_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/cpi_guard_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/cpi_guard_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/cpi_guard_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/pausable_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/pausable_kit.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/pausable_web3.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/pausable_web3.ts
+yxzhang@SolanaLearn:ts-client$ touch token-extensions/permissioned_burn_kit.ts
+yxzhang@SolanaLearn:ts-client$ ts-node token-extensions/permissioned_burn_kit.ts # 执行失败，不明原因
