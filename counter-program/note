@@ -1,0 +1,26 @@
+# https://solana.com/zh/docs/programs/rust/program-structure
+yxzhang@SolanaLearn:solana-doc$ cargo new counter-program --lib
+yxzhang@SolanaLearn:solana-doc$ cd counter-program/
+yxzhang@SolanaLearn:counter-program$ cargo add solana-program@2.2.0
+yxzhang@SolanaLearn:counter-program$ cargo add borsh
+# [lib]
+# crate-type = ["cdylib", "lib"]
+# 拷贝代码
+yxzhang@SolanaLearn:counter-program$ cargo build-sbf # 只要不是基于test-validator测试，而是基于litesvm测试，都不用v3
+yxzhang@SolanaLearn:counter-program$ cargo add litesvm@0.6.1 --dev
+yxzhang@SolanaLearn:counter-program$ cargo add solana-sdk@2.2.0 --dev
+# 拷贝测试代码
+yxzhang@SolanaLearn:counter-program$ cargo test -- --nocapture
+yxzhang@SolanaLearn:counter-program$ mkdir examples
+yxzhang@SolanaLearn:counter-program$ touch examples/client.rs
+# Cargo.toml: [[example]]
+# name = "client"
+# path = "examples/client.rs"
+yxzhang@SolanaLearn:counter-program$ cargo add solana-client@2.2.0 --dev
+yxzhang@SolanaLearn:counter-program$ cargo add tokio --dev
+yxzhang@SolanaLearn:counter-program$ cargo build-sbf --arch v3
+yxzhang@SolanaLearn:counter-program$ solana program deploy ./target/deploy/counter_program.so 
+9o8nA3E6epTtGWbjyX5qkz7iQBQkW5tjPtdJg51AZSGW
+# 拷贝client.rs，修改program_id
+yxzhang@SolanaLearn:counter-program$ cargo run --example client
+yxzhang@SolanaLearn:counter-program$ touch note
