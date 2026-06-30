@@ -1,0 +1,23 @@
+# https://solana.com/zh/docs/programs/rust
+yxzhang@SolanaLearn:solana-doc$ cargo new hello-world --lib
+yxzhang@SolanaLearn:solana-doc$ cd hello-world/
+yxzhang@SolanaLearn:hello-world$ cargo add solana-program@2.2.0
+# Cargo.toml: [lib]
+# crate-type = ["cdylib", "lib"]
+# 拷贝代码到lib.rs
+yxzhang@SolanaLearn:hello-world$ cargo build-sbf --arch v3
+yxzhang@SolanaLearn:hello-world$ solana address -k ./target/deploy/hello_world-keypair.json
+yxzhang@SolanaLearn:hello-world$ cargo add litesvm@0.6.1 --dev
+yxzhang@SolanaLearn:hello-world$ cargo add solana-sdk@2.2.0 --dev
+# 拷贝测试代码到lib.rs
+yxzhang@SolanaLearn:hello-world$ cargo test -- --no-capture
+yxzhang@SolanaLearn:hello-world$ solana program deploy ./target/deploy/hello_world.so
+Program Id: 25CiRRJVmcfnXrsRVrREbtwMmdnd3y4FV3NVdCZ2JNd2
+yxzhang@SolanaLearn:hello-world$ mkdir -p examples && touch examples/client.rs
+# Cargo.toml: [[example]]
+# name = "client"
+# path = "examples/client.rs"
+yxzhang@SolanaLearn:hello-world$ cargo add solana-client@2.2.0 --dev
+yxzhang@SolanaLearn:hello-world$ cargo add tokio --dev
+# 拷贝代码到client.rs，修改program_id
+yxzhang@SolanaLearn:hello-world$ cargo run --example client
