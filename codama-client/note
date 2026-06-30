@@ -1,0 +1,9 @@
+# https://solana.com/zh/docs/programs/codama/clients
+yxzhang@SolanaLearn:solana-doc$ mkdir codama-client
+yxzhang@SolanaLearn:solana-doc$ cd codama-client/
+yxzhang@SolanaLearn:codama-client$ mkdir example
+yxzhang@SolanaLearn:codama-client$ touch example/idl.json # 拷贝内容
+yxzhang@SolanaLearn:codama-client$ touch package.json # 拷贝内容
+yxzhang@SolanaLearn:codama-client$ npx codama init 
+yxzhang@SolanaLearn:codama-client$ pnpm install @codama/nodes-from-anchor @codama/renderers-js @codama/renderers-rust
+yxzhang@SolanaLearn:codama-client$ npx codama run --all
