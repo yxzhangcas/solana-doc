@@ -1,0 +1,10 @@
+# https://solana.com/zh/docs/frontend/nextjs-solana
+yxzhang@SolanaLearn:solana-doc$ npx create-next-app@latest next-react
+# 推荐：TypeScript; ESLint; Tailwind; Router; Agents
+yxzhang@SolanaLearn:solana-doc$ cd next-react/
+yxzhang@SolanaLearn:next-react$ rm .gitignore # 提交初始代码
+yxzhang@SolanaLearn:next-react$ npm install @solana/client@latest @solana/react-hooks@latest @solana/kit@latest
+yxzhang@SolanaLearn:next-react$ touch app/providers.tsx
+yxzhang@SolanaLearn:next-react$ mkdir app/components/
+yxzhang@SolanaLearn:next-react$ touch app/components/wallet-connect-button.tsx 
+yxzhang@SolanaLearn:next-react$ touch app/components/sol-transfer-card.tsx 
